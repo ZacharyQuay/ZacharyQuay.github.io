@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+	<link rel="stylesheet" href="newcss.css">
+    </head>
+	<style>
+		td {
+		height: auto;
+		width: 300px;
+		}
+		
+		pre code {
+		background-color: #eee;
+		border: 1px solid #999;
+		display: block;
+		padding: 5px;
+		}
+		
+		img {
+		width: 100%;
+		}
+		
+		.fling-minislide {
+		width:350px; 
+		height:300px; 
+		overflow:hidden; 
+		position:relative; 
+		}
+		
+		.fling-minislide img { 
+		position:absolute; 
+		animation:fling-minislide 30s infinite; 
+		opacity:0; 
+		width: 100%; 
+		height: auto;
+		}
+
+		@keyframes fling-minislide {
+		25%{
+		opacity:1;
+		} 
+		40%{
+		opacity:0;
+		}
+		}
+		
+		.fling-minislide img:nth-child(6){animation-delay:0s;}
+		.fling-minislide img:nth-child(5){animation-delay:5s;}
+		.fling-minislide img:nth-child(4){animation-delay:10s;}
+		.fling-minislide img:nth-child(3){animation-delay:15s;}
+		.fling-minislide img:nth-child(2){animation-delay:20s;}
+		.fling-minislide img:nth-child(1){animation-delay:25s;}
+	</style>
+
+	<title>Maker Faire 2019</title>
+	<script src="scripts/template.js"></script>
+	
+	<h2 float="right">Maker Faire 2019</h2>
+	
+	<!---<div class="fling-minislide">
+		<img src="assets/images/makerfaire2019/slideshow/image6.png">
+		<img src="assets/images/makerfaire2019/slideshow/image5.png">
+		<img src="assets/images/makerfaire2019/slideshow/image4.png">
+		<img src="assets/images/makerfaire2019/slideshow/image3.png">
+		<img src="assets/images/makerfaire2019/slideshow/image2.png">
+		<img src="assets/images/makerfaire2019/slideshow/image1.png">
+	</div>--->
+	
+	<div align="center" style="width:100%;" class="tdimg">
+		<table>
+			<tr>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image1.png">
+				</td>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image2.png">
+				</td>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image3.png">
+				</td>
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image4.png">
+				</td>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image5.png">
+				</td>
+				<td>
+					<img border="1px" src="assets/images/makerfaire2019/slideshow/image6.png">
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<p class="tab">
+		For 2019, I created an amateur radio TV (ATV) base station (well, sort of). The transmission was over amateur radio bands, the 70cm, but the transmission was kept at such a low power that a clear picture could not be received any more than ten feet. I would have required extra equipment to transmit at a farther distance. Here are weekly progress updates I wrote on how the project is turning out and what I am doing.
+	</p>
+	&nbsp;
+	<h3>3 Weeks Before Maker Faire</h3>
+	<p class="tab">
+		This year for Maker Faire, I decided to create an amateur radio TV base station. The end goal is to be transmitting pictures in real time over the 70cm ham bands. I was inspired to do this project because it struck me as interesting since I can be transmitting real-time video over the ham bands. Amateur radio has come a long way from Morse code and voice. So far, I feel that I am managing my time well and my project is progressing so far, and I have only had one short hiccup so far. Right now, I have collected some facts and information that will be used in the slideshow that I will be transmitting. These facts include information about amateur radio TV, the science behind it, how radios work, and a few other topics I am thinking of adding. Next week I plan on working and getting most of the slideshow done. My project is not super hard, but it is not easy. I have found a balanced project that is reasonably challenging that works well with my schedule.
+	</p>
+	&nbsp;
+	<h3>2 Weeks Before Maker Faire</h3>
+	<p class="tab">
+		I have been making progress on creating slides for my presentation. I am finalizing the information and I will be done with the slides by next week. I will be testing and adjusting the transmitter I have so my TV can receive a clear signal. I must find out if I need specific antennas or not for the TV and transmitter. My project is progressing just fine, but it appears that will take longer than I expected. I will, though, have enough time to complete my project when maker faire comes around.
+	</p>
+	&nbsp;
+	<h3>1 Week Before Maker Faire</h3>
+	<p class="tab">
+		This week I finished up the information that my slides will have. What I must do is create the actual slides. I have not been managing my time that well because I still must make two working antennas for the TV and the transmitter, so the transmission can be received. My project is progressing but not as well as I expected it to. I will be able to get my project done if I work on it at home.
+	</p>
+	&nbsp;
+	<h3>Here is the bash script that put the images into the frame-buffer</h3>
+	<pre>
+		<code>
+			#!/bin/bash<br>
+			ARGC=$#<br>
+			if [ $ARGC -eq 1 ]; then<br>
+				IMGDIR=$1<br>
+				INTERVAL=5<br>
+				fbi -noverbose -a -t $INTERVAL -u 'find $IMGDIR -iname "*.jpg"'<br>
+			else<br>
+				echo "Usage:" $0 "<directory>"<br>
+			fi<br>
+		</code>
+	</pre>
+	&nbsp;
+</html>
